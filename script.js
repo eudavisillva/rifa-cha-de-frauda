@@ -1,36 +1,28 @@
-// script.js
-const SUPABASE_URL = "https://SEU-PROJETO.supabase.co";
-const SUPABASE_KEY = "CHAVE-ANON-PUBLIC";
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-const telefone = "99981543912";
 const grid = document.getElementById("grid");
+const nomeInput = document.getElementById("nome");
+const telefone = "98985867414";
 
-async function fetchNumeros() {
-  const { data, error } = await supabase.from('rifa').select('*');
-  if (error) return alert("Erro ao carregar números");
+for (let i = 1; i <= 200; i++) {
+  const num = i.toString().padStart(3, '0');
+  const btn = document.createElement("button");
+  btn.className = "number";
+  btn.textContent = num;
 
-  for (let i = 1; i <= 200; i++) {
-    const ocupado = data.find(n => n.numero === i);
-    const btn = document.createElement("button");
-    btn.className = "rifa-num bg-white text-black rounded shadow";
-    btn.textContent = i.toString().padStart(3, '0');
-
-    if (ocupado) {
-      btn.classList.add("ocupado");
-      btn.innerHTML = "X";
-    } else {
-      btn.onclick = async () => {
-        const { error: insertError } = await supabase.from('rifa').insert([{ numero: i }]);
-        if (insertError) return alert("Erro ao reservar número");
-
-        window.open(`https://wa.me/55${telefone}?text=Olá, acabei de reservar o número ${i.toString().padStart(3, '0')} da rifa!`, '_blank');
-        location.reload();
-      };
+  btn.onclick = () => {
+    const nome = nomeInput.value.trim();
+    if (!nome) {
+      alert("Por favor, preencha seu nome antes de escolher um número.");
+      return;
     }
 
-    grid.appendChild(btn);
-  }
-}
+    const mensagem = `Olá! Me chamo ${nome} e escolhi o número ${num} da rifa do Chá de Fralda. Valor R$10.`;
+    const url = `https://wa.me/55${telefone}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank');
 
-fetchNumeros();
+    // Atualiza botão com "X", vermelho e desativa
+    btn.textContent = 'X';
+    btn.classList.add('disabled');
+  };
+
+  grid.appendChild(btn);
+}
