@@ -1,0 +1,73 @@
+/* Bailarinas animadas no fundo */
+body {
+  background: url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif');
+  background-size: 250px;
+  background-repeat: repeat;
+  animation: moveBG 60s linear infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+@keyframes moveBG {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+/* Container principal */
+.container {
+  background-color: rgba(255, 255, 255, 0.85);
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  color: #cc0244;
+}
+
+/* Título principal */
+.container h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Grade de números */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Estilo de cada número */
+.number {
+  background-color: #fff;
+  color: #cc0244;
+  border: 2px solid #cc0244;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s;
+}
+
+.number:hover {
+  background-color: #fce4ec;
+  transform: scale(1.1);
+}
+
+/* Número comprado */
+.selected {
+  background-color: #cc0244 !important;
+  color: #fff !important;
+  text-decoration: line-through;
+  pointer-events: none;
+}
