@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rifa Chá de Fralda - Bailarina</title>
+  <title>Rifa do Chá de Fralda - Bailarina</title>
 
-  <!-- Tailwind CSS (opcional caso deseje combinar estilos utilitários) -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-  <!-- Seu CSS personalizado -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
 <body>
 
   <div class="container">
-    <h1>Rifa do Chá de Fralda</h1>
-    <p>Escolha seu número da sorte! Cada número representa uma chance de ganhar e ajudar a chegada da nossa bailarina!</p>
+    <h1>Rifa do Chá de Fralda <br><strong>Minha Bailarina</strong></br></h1>
+    <p>Escolha seu número da sorte por apenas <strong>R$10</strong> e ajude a nossa pequena bailarina a chegar com amor!</p>
+
+    <div class="form-group">
+      <input type="text" id="nome" placeholder="Seu nome" class="input-nome" required />
+    </div>
 
     <div id="grid" class="grid"></div>
   </div>
