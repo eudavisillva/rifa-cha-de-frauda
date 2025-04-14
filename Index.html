@@ -1,0 +1,43 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Rifa Chá de Fralda</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif');
+      background-size: cover;
+      background-repeat: repeat;
+      animation: float 10s infinite alternate;
+    }
+
+    @keyframes float {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    .rifa-num {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      font-weight: bold;
+    }
+
+    .ocupado {
+      background-color: #ff0000 !important;
+      color: #fff !important;
+      pointer-events: none;
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body class="text-center text-white p-5">
+  <h1 class="text-4xl font-bold mb-6">Rifa do Chá de Fralda</h1>
+  <div id="grid" class="flex flex-wrap justify-center"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
