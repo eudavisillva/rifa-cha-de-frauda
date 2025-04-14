@@ -6,7 +6,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 @keyframes moveBG {
@@ -15,33 +15,46 @@ body {
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
   max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   text-align: center;
-  color: #cc0244;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .container h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 8px;
 }
 
 .container p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 8px;
 }
 
 .input-nome {
   padding: 0.8rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 1rem;
   width: 80%;
   margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.input-nome::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .grid {
@@ -52,27 +65,25 @@ body {
 }
 
 .number {
-  background-color: #fff;
-  color: #cc0244;
-  border: 2px solid #cc0244;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   font-weight: bold;
   font-size: 1.1rem;
   padding: 12px;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s;
-  backdrop-filter: blur(3px);
-  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .number:hover {
-  background-color: #fce4ec;
+  background-color: rgba(255, 255, 255, 0.25);
   transform: scale(1.1);
 }
 
-.number.disabled {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: red;
+.number.selected {
+  background-color: rgba(255, 0, 0, 0.6);
+  color: #fff;
+  border-color: rgba(255, 0, 0, 0.8);
   cursor: not-allowed;
-  pointer-events: none;
   }
