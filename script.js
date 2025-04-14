@@ -1,6 +1,6 @@
 const grid = document.getElementById("grid");
 const nomeInput = document.getElementById("nome");
-const telefone = "98985867414";
+const telefone = "98985867114";
 
 for (let i = 1; i <= 200; i++) {
   const num = i.toString().padStart(3, '0');
@@ -19,9 +19,10 @@ for (let i = 1; i <= 200; i++) {
     const url = `https://wa.me/55${telefone}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, '_blank');
 
-    // Atualiza botão com "X", vermelho e desativa
-    btn.textContent = 'X';
-    btn.classList.add('disabled');
+    // Aplica o estilo de número selecionado
+    btn.textContent = "X";
+    btn.classList.add("selected");
+    btn.disabled = true;
   };
 
   grid.appendChild(btn);
