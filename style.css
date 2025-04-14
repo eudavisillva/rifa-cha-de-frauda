@@ -1,4 +1,3 @@
-/* Bailarinas animadas no fundo */
 body {
   background: url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif');
   background-size: 250px;
@@ -15,9 +14,8 @@ body {
   100% { background-position: 1000px 1000px; }
 }
 
-/* Container principal */
 .container {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.9);
   max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
@@ -27,18 +25,25 @@ body {
   color: #cc0244;
 }
 
-/* Título principal */
 .container h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
 .container p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Grade de números */
+.input-nome {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
@@ -46,7 +51,6 @@ body {
   justify-content: center;
 }
 
-/* Estilo de cada número */
 .number {
   background-color: #fff;
   color: #cc0244;
@@ -57,6 +61,8 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .number:hover {
@@ -64,10 +70,9 @@ body {
   transform: scale(1.1);
 }
 
-/* Número comprado */
-.selected {
-  background-color: #cc0244 !important;
-  color: #fff !important;
-  text-decoration: line-through;
+.number.disabled {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: red;
+  cursor: not-allowed;
   pointer-events: none;
-}
+  }
